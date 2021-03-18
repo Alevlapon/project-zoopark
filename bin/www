@@ -1,37 +1,29 @@
-#!/usr/bin/env node
+const app = require('../app');
+const debug = require('debug')('project-zoopark:server');
+const http = require('http');
+const mongoose = require('mongoose')
 
-/**
- * Module dependencies.
- */
-
-var app = require('../app');
-var debug = require('debug')('project-zoopark:server');
-var http = require('http');
-
-/**
- * Get port from environment and store in Express.
- */
-
-var port = normalizePort(process.env.PORT || '3000');
+const port = normalizePort(process.env.PORT || '3000');
 app.set('port', port);
 
-/**
- * Create HTTP server.
- */
+const server = http.createServer(app)
 
-var server = http.createServer(app);
+server.listen(port,
+  () => {
+    console.log(`Server started on port ${port}.`);
 
-/**
- * Listen on provided port, on all network interfaces.
- */
-
-server.listen(port);
+    mongoose.connect('mongodb://localhost:27017/zoopark', {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+      useCreateIndex: true,
+      useFindAndModify: false
+    }, () => {
+      console.log('Connection to ZOObase is successful.');
+    })}
+);
 server.on('error', onError);
 server.on('listening', onListening);
 
-/**
- * Normalize a port into a number, string, or false.
- */
 
 function normalizePort(val) {
   var port = parseInt(val, 10);
@@ -49,9 +41,6 @@ function normalizePort(val) {
   return false;
 }
 
-/**
- * Event listener for HTTP server "error" event.
- */
 
 function onError(error) {
   if (error.syscall !== 'listen') {
@@ -77,9 +66,6 @@ function onError(error) {
   }
 }
 
-/**
- * Event listener for HTTP server "listening" event.
- */
 
 function onListening() {
   var addr = server.address();
