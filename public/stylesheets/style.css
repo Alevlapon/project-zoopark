@@ -6,3 +6,32 @@ h1 {
   color: green;
 }
 
+.signature {
+    white-space: nowrap; /* Запрещаем перенос строк */
+    overflow: hidden; /* Обрезаем все, что не помещается в область */
+    padding: 5px; /* Поля вокруг текста */
+    text-overflow: ellipsis; /* Добавляем многоточие */
+   width: 150px;
+}
+
+.carousel .carousel-item {  
+  width: 200px;
+  height: 200px;
+}
+.amber {
+  background-color: white !important;
+}
+.carousel.carousel-slider .carousel-item {
+  width: 50%;
+  height: 50%;
+}
+.filters__img {
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+  margin: 10px;
+}
+.filters__img img {
+  width: initial;
+  height: 100%;
+}

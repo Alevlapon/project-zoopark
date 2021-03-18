@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 const multer = require('multer');
 const path = require('path');
+const Animal = require('../models/animal');
 
 const storage = multer.diskStorage({
   destination: 'public/images',
@@ -20,9 +21,11 @@ router
   .get((req,res) => {
   res.render('upload')
   })
-  .post(upload.single('filedata'),(req,res) => {
+  .post(upload.single('filedata'), async (req,res) => {
     let path = `/images/${req.file.filename}`
-    console.log(req.file);
+    let a = await Animal.findOne()
+    a.img.push(`/images/${req.file.filename}`)
+    await a.save()
     res.render('upload', {path});
   })
 
