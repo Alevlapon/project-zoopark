@@ -13,11 +13,6 @@ h1 {
     text-overflow: ellipsis; /* Добавляем многоточие */
    width: 150px;
 }
-
-.carousel .carousel-item {  
-  width: 200px;
-  height: 200px;
-}
 .amber {
   background-color: white !important;
 }
@@ -34,4 +29,14 @@ h1 {
 .filters__img img {
   width: initial;
   height: 100%;
+}
+.redact {
+  width: 20px;
+  height: 20px;
+}
+.redact:hover {
+  cursor:pointer;
+ }
+.inpuAnimalName {
+  width: 50%;
 }

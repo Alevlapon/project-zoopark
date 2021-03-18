@@ -1,4 +1,4 @@
-<h1>{{animalName}}</h1>
+<h1 id="{{animalId}}"class="animalN">{{animalName}}<img id ="aName"class = "redact animalName" src="/images/redact.png"></h1>
   <div class="carousel carousel-slider center">
     {{#each animalPictures}}
     <div class="filters__img test carousel-item amber white-text">
@@ -6,8 +6,8 @@
     </div>
     {{/each}}
   </div>
-  <div>
-    <p>{{animalContent}}</p>
+  <div class="animalC">
+    <p >{{animalContent}}<img id="aContent" class = "animalContent redact" src="/images/redact.png"></p>
   </div>
   {{#if isAdmin}}
   <h1>Загрузка фоточки</h1>
@@ -16,7 +16,7 @@
 <img src="{{path}}" alt="">
 {{/if}}
     <form id ="pictureUpload" action="/animal/{{animalId}}" method="post" enctype="multipart/form-data">
-        <input type="file" name="filedata" /><br><br>
-        <input name ="sendPicture" type="submit" value="Отправить" />
+      <input type="file" name="filedata" /><input name ="sendPicture" type="submit" value="Отправить" />
     </form>
+
   {{/if}}
