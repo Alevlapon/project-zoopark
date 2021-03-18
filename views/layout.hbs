@@ -1,28 +1,23 @@
 <!DOCTYPE html>
 <html>
-
 <head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
   <link rel="stylesheet" href="/stylesheets/style.css">
-  <link rel="stylesheet" href="/stylesheets/application.css">
+
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
   <script defer src="/js/application.js"></script>
-  <script>
-    const weatherButton = document.getElementById("weather");
-    console.log(weatherButton)
-    addEventListener("click",(e) => {
-      e.preventDefault()
-      fetch("http://api.openweathermap.org/data/2.5/weather?id=478544&appid=b260a749ed0e0662954f1694e1a17a0e")
-         .then(res => res.json())
-         .then(data => console.log(data))
-    })
-  </script>
+
+
   <title>ZOOPARK</title>
 </head>
   
 <body>
-  <button id="weather">click</button>
-  <div><a></a></div>
-{{{body}}}
-</body>
 
+  {{> menu}}
+
+  {{{body}}}
+
+  {{> footer}}
+</body>
 </html>
