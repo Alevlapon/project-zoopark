@@ -12,6 +12,7 @@ router.post("/admin", async function (req, res, next) {
   const { name, password } = req.body
   const admin = await Admin.findOne({ login: name })
   if (admin && admin.password == password) {
+    req.session.user = admin
     res.redirect('/')
   } else {
     res.redirect('/')
