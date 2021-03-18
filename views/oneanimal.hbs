@@ -1,0 +1,11 @@
+<h1>{{animalName}}</h1>
+  <div class="carousel carousel-slider center">
+    {{#each animalPictures}}
+    <div class="filters__img test carousel-item amber white-text">
+      <img style ="width:500px; heigth:500px"src="{{this}}">
+    </div>
+    {{/each}}
+  </div>
+  <div>
+    <p>{{animalContent}}</p>
+  </div>
