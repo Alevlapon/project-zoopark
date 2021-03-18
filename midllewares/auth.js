@@ -36,7 +36,16 @@ const sessionChecker = (req, res, next) => {
   }
 };
 
+const adminChecker = (req, res, next) => {
+  if (!req.session.user) {
+    next()
+  } else {
+    res.locals.isAdmin = true
+    next();
+  }
+};
 module.exports = {
   sessionChecker,
-  cookieMiddleware
+  cookieMiddleware,
+  adminChecker
 };

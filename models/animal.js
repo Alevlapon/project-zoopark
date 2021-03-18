@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
 const animalScheme = new mongoose.Schema({
   name: String,
@@ -10,4 +10,5 @@ const animalScheme = new mongoose.Schema({
   frontImg:String
 });
 
-module.exports = mongoose.model('Animal', animalScheme)
+module.exports = mongoose.model('Animal', animalScheme);
+
