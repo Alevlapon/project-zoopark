@@ -5,7 +5,7 @@ body {
   background-image: url("../images/palm-leaf.png")
 }
 h1 {
-  color: green;
+  color: rgb(0, 128, 0);
 }
 
 .signature {
@@ -13,7 +13,7 @@ h1 {
     overflow: hidden; /* Обрезаем все, что не помещается в область */
     padding: 5px; /* Поля вокруг текста */
     text-overflow: ellipsis; /* Добавляем многоточие */
-    width: 350px;
+    width: 450px;
 }
 .amber {
   background-color: white !important;
@@ -79,7 +79,37 @@ h1 {
 #price {
   margin-left: 5%;
   margin-right: 5%;
+  font-family: cursive;
+  font-size: 20px;
 }
 p {
+  font-family: cursive;
+}
+.animalN {
+  padding-left: 10%;
+}
+.newtext {
+  color: black;
+  font-size: 16px;
+}
+#emblema {
+  width: 64px;
+  height: 64px;
+}
+.maincontext {
+  font-size: 17px;
+}
+.map {
+  margin-left: 7%;
+  margin-right: 10%;
+}
+.time {
+  margin-left: 7%;
+  font-size: 20px;
+  font-family: cursive;
+}
+#pricetext {
+  margin-top: 35px;
+  font-size: 20px;
   font-family: cursive;
 }

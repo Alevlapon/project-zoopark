@@ -28,7 +28,7 @@ const upload = multer({ storage:storage, fileFilter:fileFilter })
 
 router.get('/',adminChecker, async (req, res) => {
   let animals = await Animal.find()
-  res.render('animal', {animals});
+  res.render('animal', { animals });
 });
 router.get('/new', adminChecker,AdminCheckRedir,(req, res) => {
   res.render('new')
@@ -61,7 +61,7 @@ router.get('/:id', adminChecker, async (req,res) => {
 router.post('/:id', adminChecker,upload.single('filedata'), async (req,res) => {
   if (req.file) {
   let path = `/images/${req.file.filename}`
-  let animal = await Animal.findOne({_id:req.params.id})
+  let animal = await Animal.findOne({ _id: req.params.id })
   animal.img.push(path)
   await animal.save()
   res.redirect(`/animal/${req.params.id}`)
@@ -98,4 +98,5 @@ router.delete('/:id', adminChecker, async (req,res) => {
   }
   
 })
+
 module.exports = router;
