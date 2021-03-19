@@ -1,27 +1,35 @@
 <h1>Тарифы</h1> 
 
 
-
+<form id="price" method="PUT" action="/price">
       <table>
         <thead>
           <tr>
               <th>Выходные</th>
+              <th></th>
               <th>Будни</th>
+              <th></th>
           </tr>
         </thead>
 
         <tbody>
           <tr>
             <td>Взрослый</td>
-            
+            <td class="cost" name="price1">{{lastTarif.big2}}</td>
             <td>Взрослый</td>
+            <td class="cost">{{lastTarif.big5}}</td>
           </tr>
+          
           <tr>
             <td>Детский</td>   
-            <td>Детский</td>
+            <td class="cost">{{lastTarif.child2}}</td>
+            <td>Детский</td>   
+            <td class="cost">{{lastTarif.child5}}</td>
           </tr>
         </tbody>
       </table>
+
       {{#if isAdmin}}
-       <button id="change">изменить</button>  
+       <button id="change" type="submit" name="changeMe">Изменить</button>  
       {{/if}}
+</form>

@@ -5,9 +5,17 @@
 <nav>
   <div class="nav-wrapper">
     <ul id="nav-mobile" class="right hide-on-med-and-down">
+      {{#if isAdmin}}
+      <li><a href="/animal/new"> Добавить животное</a></li>
+      <li><a href="/animal">Животные</a></li>
+      <li><a href="/price">Тарифы</a></li>
+      <li><a href="/logout">Выйти</a></li>
+      {{else}}
       <li><a href="/"> Главная</a></li>
       <li><a href="/animal">Животные</a></li>
       <li><a href="/price">Тарифы</a></li>
+
+       {{/if}}
     </ul>
   </div>
 </nav>
