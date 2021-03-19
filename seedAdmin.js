@@ -8,12 +8,14 @@ mongoose.connect('mongodb://localhost:27017/zoopark', {
   useFindAndModify: false
 })
 
-async function seed() {
+async function seedAdmin() {
   await Admin.create({
     login: "bear",
     password: '2021'
   })
-
 }
 
-// seed()
+
+
+
+seedAdmin()
