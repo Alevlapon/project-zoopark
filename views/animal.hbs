@@ -1,0 +1,17 @@
+  <div class="row test">
+      {{#each animals}}
+    <div class="col s6">
+      <div class="card">
+        <div class="card-image ffilters__img">
+          <img src="{{this.frontImg}}">
+        </div>
+        <div class="card-content">
+          <p class="signature">{{this.info}}</p>
+        </div>
+        <div class="card-action">
+          <a href="/animal/{{this._id}}">{{this.name}}</a>
+        </div>
+      </div>
+    </div>
+      {{/each}}
+  </div>

@@ -1,8 +1,115 @@
+nav {
+  background-color: green;
+}
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-image: url("../images/palm-leaf.png")
+}
+h1 {
+  color: rgb(0, 128, 0);
 }
 
-a {
-  color: #00B7FF;
+.signature {
+    white-space: nowrap; /* Запрещаем перенос строк */
+    overflow: hidden; /* Обрезаем все, что не помещается в область */
+    padding: 5px; /* Поля вокруг текста */
+    text-overflow: ellipsis; /* Добавляем многоточие */
+    width: 450px;
+}
+.amber {
+  background-color: white !important;
+}
+.carousel.carousel-slider .carousel-item {
+  width: 50%;
+  height: 50%;
+}
+.filters__img {
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+  margin: 10px;
+}
+.filters__img img {
+  width: initial;
+  height: 100%;
+}
+.redact {
+  width: 20px;
+  height: 20px;
+}
+.redact:hover {
+  cursor:pointer;
+ }
+.inpuAnimalName {
+  width: 70%;
+}
+.test {
+  margin:3%
+}
+.ffilters__img {
+  width: 400px;
+  height: 400px;
+  position: relative;
+  overflow: hidden;
+}
+.card .card-image {
+  width: initial;
+}
+.removeBut {
+  color:red
+}
+.animalC {
+  margin-left: 10%;
+  margin-right: 10%;
+  font-family: cursive;
+}
+#title-input {
+  width: 90%;
+}
+#body-textarea {
+  width: 88%;
+}
+.page-footer{
+  margin-top: 5%;
+}
+.price-info {
+  margin-left: 5%;
+  margin-right: 5%;
+  font-family: cursive;
+}
+#price {
+  margin-left: 5%;
+  margin-right: 5%;
+  font-family: cursive;
+  font-size: 20px;
+}
+p {
+  font-family: cursive;
+}
+.animalN {
+  padding-left: 10%;
+}
+.newtext {
+  color: black;
+  font-size: 16px;
+}
+#emblema {
+  width: 64px;
+  height: 64px;
+}
+.maincontext {
+  font-size: 17px;
+}
+.map {
+  margin-left: 7%;
+  margin-right: 10%;
+}
+.time {
+  margin-left: 7%;
+  font-size: 20px;
+  font-family: cursive;
+}
+#pricetext {
+  margin-top: 35px;
+  font-size: 20px;
+  font-family: cursive;
 }

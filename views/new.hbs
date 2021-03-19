@@ -1,0 +1,18 @@
+<form method="post" action="/animal" id ="pictureUpload" enctype="multipart/form-data">
+  <label class="block mar-b-1"><p class="newtext">Имя животного:</p> </label>
+  <input id="title-input" name="name" type="text" >
+​
+  <label for="body-textarea" class="block mar-b-1"><p class="newtext"> Описание животного:</p></label>
+  <textarea id="body-textarea" name="info"></textarea>
+​
+  <div class="file-field input-field" style="width:500px">
+      <div class="btn">
+        <span>File</span>
+        <input type="file" name="filedata">
+      </div>
+      <div class="file-path-wrapper">
+        <input class="file-path validate" type="text" placeholder="Загрузите файл">
+      </div>
+    </div>
+      <button class="btn waves-effect waves-light" type="submit" name ="sendPicture">Загрузить</button>
+</form>

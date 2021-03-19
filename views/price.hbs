@@ -1,0 +1,38 @@
+<h1>Тарифы</h1> 
+
+
+<form id="price" method="PUT" action="/price">
+      <table>
+        <thead>
+          <tr>
+              <th>Выходные</th>
+              <th>Цены в рублях</th>
+              <th>Будни</th>
+              <th>Цены в рублях</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Взрослый</td>
+            <td class="cost" name="price1">{{lastTarif.big2}}</td>
+            <td>Взрослый</td>
+            <td class="cost">{{lastTarif.big5}}</td>
+          </tr>
+          
+          <tr>
+            <td>Детский</td>   
+            <td class="cost">{{lastTarif.child2}}</td>
+            <td>Детский</td>   
+            <td class="cost">{{lastTarif.child5}}</td>
+          </tr>
+        </tbody>
+      </table>
+
+      {{#if isAdmin}}
+       <button id="change" type="submit" name="changeMe">Изменить</button>  
+      {{/if}}
+      <div id="pricetext">Для граждан России и граждан государств-членов ЕАЭС установлены равноценные тарифы.
+На группу от 15 детей один сопровождающий проходит бесплатно.
+Ребёнок младше 14 лет может находиться на территории ООО «Зоопарк» только в сопровождении взрослого.
+Ребёнок старше 14 лет без сопровождения лица, достигшего совершеннолетия, должен иметь при себе паспорт.</div>
+</form>
