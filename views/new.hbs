@@ -5,6 +5,14 @@
   <label for="body-textarea" class="block mar-b-1">Описание животного:</label>
   <textarea id="body-textarea" name="info"></textarea>
 ​
-  <input type="file" name="filedata" /><br><br>
-  <input name ="sendPicture" type="submit" value="Отправить" />
+  <div class="file-field input-field" style="width:500px">
+      <div class="btn">
+        <span>File</span>
+        <input type="file" name="filedata">
+      </div>
+      <div class="file-path-wrapper">
+        <input class="file-path validate" type="text" placeholder="Загрузите файл">
+      </div>
+    </div>
+      <button class="btn waves-effect waves-light" type="submit" name ="sendPicture">Загрузить</button>
 </form>

@@ -1,7 +1,9 @@
 nav {
   background-color: green;
 }
-
+body {
+  background-image: url("../images/palm-leaf.png")
+}
 h1 {
   color: green;
 }
@@ -11,7 +13,7 @@ h1 {
     overflow: hidden; /* Обрезаем все, что не помещается в область */
     padding: 5px; /* Поля вокруг текста */
     text-overflow: ellipsis; /* Добавляем многоточие */
-   width: 150px;
+    width: 350px;
 }
 .amber {
   background-color: white !important;
@@ -38,5 +40,46 @@ h1 {
   cursor:pointer;
  }
 .inpuAnimalName {
-  width: 50%;
+  width: 70%;
+}
+.test {
+  margin:3%
+}
+.ffilters__img {
+  width: 400px;
+  height: 400px;
+  position: relative;
+  overflow: hidden;
+}
+.card .card-image {
+  width: initial;
+}
+.removeBut {
+  color:red
+}
+.animalC {
+  margin-left: 10%;
+  margin-right: 10%;
+  font-family: cursive;
+}
+#title-input {
+  width: 90%;
+}
+#body-textarea {
+  width: 88%;
+}
+.page-footer{
+  margin-top: 5%;
+}
+.price-info {
+  margin-left: 5%;
+  margin-right: 5%;
+  font-family: cursive;
+}
+#price {
+  margin-left: 5%;
+  margin-right: 5%;
+}
+p {
+  font-family: cursive;
 }

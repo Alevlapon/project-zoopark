@@ -44,8 +44,17 @@ const adminChecker = (req, res, next) => {
     next();
   }
 };
+
+const AdminCheckRedir = (req,res,next) => {
+  if (!req.session.user) {
+    res.redirect('/')
+  } else {
+    next()
+  }
+}
 module.exports = {
   sessionChecker,
   cookieMiddleware,
-  adminChecker
+  adminChecker,
+  AdminCheckRedir
 };

@@ -1,40 +1,29 @@
 document.addEventListener('DOMContentLoaded', function() {
-
-  const prices = document.querySelector('#price')
-  prices.addEventListener('submit', (e) => {
-    e.preventDefault()
-    const lastPrice = document.getElementsByClassName("cost")
-    console.log(lastPrice);
-    // const response = fetch()
-  })
-
+  
+  document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.parallax');
+    var instances = M.Parallax.init(elems, options);
+  });
   const elems = document.querySelectorAll('.carousel');
   const instances = M.Carousel.init(elems, {fullWidth: true});
-  let a = document.getElementById('aName')
-  if (a) {
+  let aName = document.getElementById('aName')
+  if (aName) {
     function nameClick() {
       const animalName = document.getElementsByClassName('animalName')[0]
       animalName.addEventListener('click', async (e) => {
         e.preventDefault()
         let h = document.getElementById('aName')
         let prev = e.target.parentNode
-        console.log(prev);
         const res = await fetch('http://localhost:3000/views/inputAnimal.hbs')
-        console.log(res);
         const source = await res.text()
-        console.log(source);
         const template = Handlebars.compile(source)
-        console.log(template);
         const html = template({val:prev.textContent, id:h.id})
-        console.log(html);
         e.target.parentNode.innerHTML = html
         hnew = document.getElementById('aName')
         hnew.addEventListener('submit', async (el) => {
           el.preventDefault()
           let parent = document.getElementById('aName')
           let insert = document.getElementsByClassName('animalN')[0]
-          console.log(insert);
-          console.log(insert.id);
           let response = await fetch(`/animal/${insert.id}`, {
             method: 'PUT',
             headers: {
@@ -88,7 +77,32 @@ document.addEventListener('DOMContentLoaded', function() {
       })
     }
     contentClick()
-  
+    function removePicture() {
+      const deleteBut = Array.from(document.getElementsByClassName('remove'))
+      if(deleteBut) {
+        deleteBut.forEach((el) => el.addEventListener('click', async (e) => {
+          e.preventDefault()
+          if (e.target.className == 'removeBut') {
+            console.log(e.target.parentElement);
+            let response = await fetch('/animal/:id', {
+              method:'DELETE',
+              headers: {
+                'Content-Type': 'application/json'
+              },
+              body: JSON.stringify({
+                id:e.target.parentElement.id,
+                path:e.target.id,
+              }) 
+            })
+            let res = await response.json()
+            if (res === 'Success') {
+              e.target.parentElement.remove()
+            }
+          }
+        }))
+      }
+    }
+    removePicture()
     function getBackName (val) {
       return `${val} <img id ="aName" class = "redact animalName" src="/images/redact.png">`
     }

@@ -1,22 +1,55 @@
-<h1 id="{{animalId}}"class="animalN">{{animalName}}<img id ="aName"class = "redact animalName" src="/images/redact.png"></h1>
+<h1 id="{{animalId}}"class="animalN">{{animalName}}
+  {{#if isAdmin}}
+  <img id ="aName"class = "redact animalName" src="/images/redact.png">
+   {{/if}}
+  </h1>
   <div class="carousel carousel-slider center">
-    {{#each animalPictures}}
+    {{#if isAdmin}}
+     {{#each animalPictures}}
+    <div class="filters__img test carousel-item amber white-text">
+      <img style ="width:500px; heigth:500px"src="{{this}}" title="{{this}}">
+    </div>
+    {{/each}}
+    {{else}}
+     {{#each animalPictures}}
     <div class="filters__img test carousel-item amber white-text">
       <img style ="width:500px; heigth:500px"src="{{this}}">
     </div>
     {{/each}}
-  </div>
+    {{/if}}
+  </div> 
   <div class="animalC">
-    <p >{{animalContent}}<img id="aContent" class = "animalContent redact" src="/images/redact.png"></p>
+    <p>{{animalContent}}
+      {{#if isAdmin}}
+      <img id="aContent" class = "animalContent redact" src="/images/redact.png"></p>
+        {{/if}}
   </div>
   {{#if isAdmin}}
   <h1>Загрузка фоточки</h1>
+  {{#if uploadErr}}
+  <h3>{{uploadErr}}</h3>
+  {{/if}}
 {{#if path}}
 <h1>{{path}}</h1>
 <img src="{{path}}" alt="">
 {{/if}}
     <form id ="pictureUpload" action="/animal/{{animalId}}" method="post" enctype="multipart/form-data">
-      <input type="file" name="filedata" /><input name ="sendPicture" type="submit" value="Отправить" />
+    <div class="file-field input-field" style="width:500px">
+      <div class="btn">
+        <span>File</span>
+        <input type="file" name="filedata">
+      </div>
+      <div class="file-path-wrapper">
+        <input class="file-path validate" type="text" placeholder="Загрузите файл">
+      </div>
+    </div>
+      <button class="btn waves-effect waves-light" type="submit" name ="sendPicture">Загрузить</button>
     </form>
-
+  {{/if}}
+  {{#if isAdmin}}
+  <ol>
+  {{#each images}}
+  <li class="remove" id="{{../animalId}}">{{this}} <a class="removeBut" id = "{{this}}" href="">remove</a></li>
+  {{/each}}
+  </ol>
   {{/if}}
