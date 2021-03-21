@@ -1,6 +1,12 @@
 
 
 document.addEventListener('DOMContentLoaded', function() {
+  fetch('http://api.openweathermap.org/data/2.5/weather?id=478544&appid=b260a749ed0e0662954f1694e1a17a0e&lang=ru&units=metric')
+.then(res => res.json())
+.then(data => {
+  console.log(data);
+  document.querySelector('#weather').innerHTML = `Погода в Урюпинске: ${Math.round(data.main.temp_max)} &deg , ${data.weather[0].description}`
+})
   const listen1 = () => {
     const prices = document.querySelector('#price')
   // console.log(prices);
@@ -77,6 +83,12 @@ saveTarif.addEventListener('click', async (e) => {
 }
 
 listen1()
+
+fetch('http://api.openweathermap.org/data/2.5/weather?id=478544&appid=b260a749ed0e0662954f1694e1a17a0e')
+.then(res => res.json())
+.then(data => {
+  console.log(data);
+  document.querySelector('#weather').innerHTML = `${data.weather[0].description}`
 })
 
-
+})
